@@ -1,0 +1,16 @@
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\bin\Debug\ManagementSystem.exe.config
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\bin\Debug\ManagementSystem.exe
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\bin\Debug\ManagementSystem.pdb
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.csproj.AssemblyReference.cache
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.Properties.Resources.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.csproj.GenerateResource.cache
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.csproj.CoreCompileInputs.cache
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.exe
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.pdb
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.LogInForm.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.NewProjectForm.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.DashBoardForm.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.SignUpForm.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.AddCoworkerForm.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.AddTaskForm.resources
+E:\COURS\UTS\Study Abroad\.NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.EditTaskForm.resources
