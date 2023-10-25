@@ -21,9 +21,7 @@ namespace ManagementSystem
             InitializeComponent();
             this.accountId = accountId;
             this.projectId = projectId;
-            comboBox1.DataSource = typeof(Color).GetProperties()
-                .Where(x => x.PropertyType == typeof(Color))
-                .Select(x => x.GetValue(null)).ToList();
+            comboBox1.DataSource = new List<Color>{Color.FromName("Blue"), Color.FromName("Green"), Color.FromName("Orange"), Color.FromName("Purple"), Color.FromName("Pink"), Color.FromName("Brown"), Color.FromName("Teal"), Color.FromName("Cyan"), Color.FromName("Magenta"), Color.FromName("Gold"), Color.FromName("Indigo"), Color.FromName("Maroon"), Color.FromName("Turquoise")};
             comboBox1.MaxDropDownItems = 10;
             comboBox1.IntegralHeight = false;
             comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
@@ -59,7 +57,7 @@ namespace ManagementSystem
         {
             Account account = new Account(textPassword.Text, 1, textFirstName.Text, textLastName.Text, textEmail.Text, this.projectId);
             Coworker coworker = new Coworker(account.accountId, account.status, account.firstName, account.lastName, (Color)comboBox1.SelectedValue, this.projectId);
-            new DashBoardForm(this.accountId, projectId).Show();
+            new ManagerDashBoardForm(this.accountId, projectId).Show();
             this.Hide();
         }
 

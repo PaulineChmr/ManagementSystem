@@ -26,6 +26,25 @@ namespace ManagementSystem
             ArrayList taskList = readTaskDB();
             label7.Text = ((Task)taskList[taskIndex]).taskName;
             label3.Text = ((Task)taskList[taskIndex]).accountId.ToString();
+            Hashtable coworkerTable = readCoworkerDB();
+            label4.Text = ((Coworker)coworkerTable[((Task)taskList[taskIndex]).accountId]).GetName();
+        }
+
+        private Hashtable readCoworkerDB()
+        {
+            Hashtable coworkerTable = new Hashtable();
+            List<string> textFile = new List<string>();
+            if (File.Exists("Project" + projectId + "/workerDB.txt"))
+            {
+                textFile = File.ReadAllLines("Project" + projectId + "/workerDB.txt").ToList();
+                foreach (string line in textFile)
+                {
+                    string[] items = line.Split(',');
+                    Coworker coworker = new Coworker(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]), items[2], items[3], Color.FromName(items[4]));
+                    coworkerTable.Add(coworker.workerId, coworker);
+                }
+            }
+            return coworkerTable;
         }
 
         private ArrayList readTaskDB()
@@ -67,20 +86,26 @@ namespace ManagementSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string status = comboBox1.SelectedItem.ToString();
-            switch (status)
-            {
-                case "to do":
-                    ChangeStatus("to do");
-                    break;
-                case "in progress":
-                    ChangeStatus("in progress");
-                    break;
-                case "done":
-                    ChangeStatus("done");
-                    break;
+            if (comboBox1.SelectedItem == null) {
+
             }
-            new DashBoardForm(this.accountId, this.projectId).Show();
+            else
+            {
+                string status = comboBox1.SelectedItem.ToString();
+                switch (status)
+                {
+                    case "to do":
+                        ChangeStatus("to do");
+                        break;
+                    case "in progress":
+                        ChangeStatus("in progress");
+                        break;
+                    case "done":
+                        ChangeStatus("done");
+                        break;
+                }
+            }
+            new ManagerDashBoardForm(this.accountId, this.projectId).Show();
             this.Hide();
         }
 

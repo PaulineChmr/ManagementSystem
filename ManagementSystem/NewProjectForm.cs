@@ -28,9 +28,9 @@ namespace ManagementSystem
             Account user = (Account)accountTable[userId];
             user.AddProject(project.projectId);
             Directory.CreateDirectory("Project" + project.projectId);
-            File.AppendAllText("Project" + project.projectId + "/workerDB.txt", user.accountId + "," + user.status + "," + user.firstName + "," + user.lastName + "," + user.lastName + "," + Color.Black.Name + Environment.NewLine);
+            File.AppendAllText("Project" + project.projectId + "/workerDB.txt", user.accountId + "," + user.status + "," + user.firstName + "," + user.lastName + "," + Color.Red.Name + Environment.NewLine);
             MessageBox.Show("Your project : " + textName.Text + " is now created !");
-            new DashBoardForm(userId, project.projectId).Show();
+            new ManagerDashBoardForm(userId, project.projectId).Show();
             this.Hide();
         }
 

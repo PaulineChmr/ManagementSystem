@@ -60,6 +60,12 @@
       <DependentUpon>AddTaskForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Coworker.cs" />
+    <Compile Include="CoworkerDashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoworkerDashBoardForm.Designer.cs">
+      <DependentUpon>CoworkerDashBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditTaskForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,11 +78,11 @@
     <Compile Include="LogInForm.Designer.cs">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DashBoardForm.cs">
+    <Compile Include="ManagerDashBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashBoardForm.Designer.cs">
-      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    <Compile Include="ManagerDashBoardForm.Designer.cs">
+      <DependentUpon>ManagerDashBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewProjectForm.cs">
       <SubType>Form</SubType>
@@ -101,8 +107,11 @@
     <EmbeddedResource Include="AddTaskForm.resx">
       <DependentUpon>AddTaskForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashBoardForm.resx">
-      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    <EmbeddedResource Include="CoworkerDashBoardForm.resx">
+      <DependentUpon>CoworkerDashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerDashBoardForm.resx">
+      <DependentUpon>ManagerDashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditTaskForm.resx">
       <DependentUpon>EditTaskForm.cs</DependentUpon>

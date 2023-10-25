@@ -45,8 +45,19 @@ namespace ManagementSystem
                 {
                     Account account = (Account)accountTable[Convert.ToInt32(textId.Text)];
                     int projectId = account.projectId;
-                    new DashBoardForm(Convert.ToInt32(textId.Text), projectId).Show();
-                    this.Hide();
+                    switch (account.status){
+                        case 0:
+                            new ManagerDashBoardForm(Convert.ToInt32(textId.Text), projectId).Show();
+                            this.Hide();
+                            break;
+                        case 1:
+                            new CoworkerDashBoardForm(Convert.ToInt32(textId.Text), projectId).Show();
+                            this.Hide();
+                            break;
+                    }
+
+
+
                 }
                 else
                 {

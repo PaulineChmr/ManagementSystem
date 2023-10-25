@@ -69,7 +69,7 @@ namespace ManagementSystem
             string workerId = selectedValue.Substring(0, firstSpaceIndex);
             Task task = new Task(this.projectId, Convert.ToInt32(workerId), textName.Text);
             MessageBox.Show("Task : " + task.taskName + " added !");
-            new DashBoardForm(this.accountId, this.projectId).Show();
+            new ManagerDashBoardForm(this.accountId, this.projectId).Show();
             this.Hide();
         }
 

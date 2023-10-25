@@ -35,5 +35,10 @@ namespace ManagementSystem
             File.AppendAllText("Project" + projectId + "/workerDB.txt", this.workerId + "," + this.status + "," + this.firstName + "," + this.lastName + "," + this.color.Name + Environment.NewLine);
         }
 
+        public string GetName()
+        {
+            return (this.firstName + " " + this.lastName);
+        }
+
     }
 }

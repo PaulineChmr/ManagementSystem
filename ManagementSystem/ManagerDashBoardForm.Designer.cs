@@ -1,7 +1,7 @@
 ﻿
 namespace ManagementSystem
 {
-    partial class DashBoardForm
+    partial class ManagerDashBoardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,10 @@ namespace ManagementSystem
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,16 +79,6 @@ namespace ManagementSystem
             this.label4.TabIndex = 3;
             this.label4.Text = "label4";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(587, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -105,19 +96,39 @@ namespace ManagementSystem
             this.progressBar1.Size = new System.Drawing.Size(352, 23);
             this.progressBar1.TabIndex = 6;
             // 
-            // DashBoardForm
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(47, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 44);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Log Out";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(592, 77);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(199, 164);
+            this.listBox2.TabIndex = 16;
+            // 
+            // ManagerDashBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "DashBoardForm";
+            this.Name = "ManagerDashBoardForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.DashBoardForm_Load);
             this.Click += new System.EventHandler(this.button1_Click);
@@ -132,8 +143,9 @@ namespace ManagementSystem
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox2;
     }
 }
