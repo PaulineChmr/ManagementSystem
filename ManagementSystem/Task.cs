@@ -16,12 +16,12 @@ namespace ManagementSystem
         public string taskStatus;
         public Task(int projectId, int accountId, string taskName)
         {
-            this.taskId = Counter();
             this.projectId = projectId;
+            this.taskId = Convert.ToInt32("1" + Counter().ToString());
             this.accountId = accountId;
             this.taskName = taskName;
             this.taskStatus = "to do";
-            File.WriteAllText("countTask.txt", Convert.ToString(Convert.ToInt32(File.ReadAllText("countTask.txt")) + 1));
+            File.WriteAllText("Project" + projectId + "/countTask.txt", (Counter() + 1).ToString());
             File.AppendAllText("Project" + projectId + "/taskDB.txt", this.taskId + "," + this.projectId + "," + this.accountId + "," + this.taskName + "," + this.taskStatus + Environment.NewLine);
         }
 
@@ -38,11 +38,11 @@ namespace ManagementSystem
         {
             try
             {
-                return (Convert.ToInt32(File.ReadAllText("countTask.txt")));
+                return (Convert.ToInt32(File.ReadAllText("Project" + this.projectId + "/countTask.txt")));
             }
             catch
             {
-                File.WriteAllText("countTask.txt", "1");
+                File.WriteAllText("Project" + this.projectId + "/countTask.txt", "1");
                 return 1;
             }
         }

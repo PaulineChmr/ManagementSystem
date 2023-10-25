@@ -24,7 +24,7 @@ namespace ManagementSystem
             label3.Text = account.firstName +  " " + account.lastName;
             this.accountId = accountId;
             this.projectId = projectId;
-            if(projectId == -1)
+            if (projectId == -1)
             {
                 label4.Text = "You have no project assigned";
                 progressBar1.Minimum = 0;
@@ -69,7 +69,7 @@ namespace ManagementSystem
                 listBox2.DataSource = coworkerList;
                 listBox2.DrawMode = DrawMode.OwnerDrawFixed;
                 listBox2.DrawItem += new DrawItemEventHandler(ListBox2_DrawItem);
-                ArrayList taskList = readTaskDB();
+                List<Task> taskList = readTaskDB();
                 progressBar1.Minimum = 0;
                 progressBar1.Maximum = taskList.Count;
                 progressBar1.Value = (from Task task in taskList
@@ -86,10 +86,20 @@ namespace ManagementSystem
                     new AddTaskForm(accountId, this.projectId).Show();
                     this.Hide();
                 };
-                listBox1.DataSource = taskList;
+                listBox1.DataSource = taskList.Where(x => x.taskStatus == "to do").ToList();
                 listBox1.DrawMode = DrawMode.OwnerDrawFixed;
                 listBox1.DrawItem += new DrawItemEventHandler(ListBox1_DrawItem);
-                listBox1.SelectedIndexChanged += new EventHandler(ListBox_Click);
+                listBox1.SelectedIndexChanged += new EventHandler(ListBox1_Click);
+
+                listBox3.DataSource = taskList.Where(x => x.taskStatus == "in progress").ToList();
+                listBox3.DrawMode = DrawMode.OwnerDrawFixed;
+                listBox3.DrawItem += new DrawItemEventHandler(ListBox3_DrawItem);
+                listBox3.SelectedIndexChanged += new EventHandler(ListBox3_Click);
+
+                listBox4.DataSource = taskList.Where(x => x.taskStatus == "done").ToList();
+                listBox4.DrawMode = DrawMode.OwnerDrawFixed;
+                listBox4.DrawItem += new DrawItemEventHandler(ListBox4_DrawItem);
+                listBox4.SelectedIndexChanged += new EventHandler(ListBox4_Click);
             }
         }
         private void ListBox2_DrawItem(object sender, DrawItemEventArgs e)
@@ -128,13 +138,98 @@ namespace ManagementSystem
             e.DrawFocusRectangle();
         }
 
-        private void ListBox_Click(object sender, EventArgs e)
+        private void ListBox1_Click(object sender, EventArgs e)
         {
             ListBox listBox = (ListBox)sender;
+            List<Task> toDoTaskList = readTaskDB().Where(x => x.taskStatus == "to do").ToList();
+            Task selectedTask = ((Task)toDoTaskList[listBox.SelectedIndex]);
             if (listBox.SelectedIndex != -1)
             {
-                new EditTaskForm(this.accountId, listBox.SelectedIndex, this.projectId).Show();
-                this.Hide();
+                if (selectedTask.accountId == this.accountId)
+                {
+                    new EditTaskForm(this.accountId, selectedTask.taskId, this.projectId).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("You are not assigned to this task !");
+                }
+            }
+        }
+
+        private void ListBox3_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Hashtable coworkerTable = readCoworkerDB();
+            e.DrawBackground();
+
+            if (e.Index >= 0)
+            {
+                Color itemColor = ((Coworker)coworkerTable[((Task)listBox3.Items[e.Index]).accountId]).color;
+                using (Brush brush = new SolidBrush(itemColor))
+                {
+                    e.Graphics.FillRectangle(brush, e.Bounds);
+                }
+
+                e.Graphics.DrawString(((Task)listBox3.Items[e.Index]).taskName + "  " + ((Task)listBox3.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void ListBox3_Click(object sender, EventArgs e)
+        {
+            ListBox listBox = (ListBox)sender;
+            List<Task> toDoTaskList = readTaskDB().Where(x => x.taskStatus == "in progress").ToList();
+            Task selectedTask = ((Task)toDoTaskList[listBox.SelectedIndex]);
+            if (listBox.SelectedIndex != -1)
+            {
+                if (selectedTask.accountId == this.accountId)
+                {
+                    new EditTaskForm(this.accountId, selectedTask.taskId, this.projectId).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("You are not assigned to this task !");
+                }
+            }
+        }
+
+        private void ListBox4_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Hashtable coworkerTable = readCoworkerDB();
+            e.DrawBackground();
+
+            if (e.Index >= 0)
+            {
+                Color itemColor = ((Coworker)coworkerTable[((Task)listBox4.Items[e.Index]).accountId]).color;
+                using (Brush brush = new SolidBrush(itemColor))
+                {
+                    e.Graphics.FillRectangle(brush, e.Bounds);
+                }
+
+                e.Graphics.DrawString(((Task)listBox4.Items[e.Index]).taskName + "  " + ((Task)listBox4.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void ListBox4_Click(object sender, EventArgs e)
+        {
+            ListBox listBox = (ListBox)sender;
+            List<Task> toDoTaskList = readTaskDB().Where(x => x.taskStatus == "done").ToList();
+            Task selectedTask = ((Task)toDoTaskList[listBox.SelectedIndex]);
+            if (listBox.SelectedIndex != -1)
+            {
+                if (selectedTask.accountId == this.accountId)
+                {
+                    new EditTaskForm(this.accountId, selectedTask.taskId, this.projectId).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("You are not assigned to this task !");
+                }
             }
         }
 
@@ -189,9 +284,9 @@ namespace ManagementSystem
             return coworkerTable;
         }
 
-        private ArrayList readTaskDB()
+        private List<Task> readTaskDB()
         {
-            ArrayList taskList = new ArrayList();
+            List<Task> taskList = new List<Task>();
             List<string> textFile = new List<string>();
             if (File.Exists("Project" + projectId + "/taskDB.txt"))
             {

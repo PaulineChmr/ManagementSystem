@@ -16,18 +16,18 @@ namespace ManagementSystem
     {
         public int accountId;
         public int projectId;
-        public int taskIndex;
-        public EditTaskForm(int accountId, int taskIndex, int projectId)
+        public int taskId;
+        public EditTaskForm(int accountId, int taskId, int projectId)
         {
             InitializeComponent();
             this.accountId = accountId;
             this.projectId = projectId;
-            this.taskIndex = taskIndex;
-            ArrayList taskList = readTaskDB();
-            label7.Text = ((Task)taskList[taskIndex]).taskName;
-            label3.Text = ((Task)taskList[taskIndex]).accountId.ToString();
+            this.taskId = taskId;
+            Hashtable taskTable = readTaskDB();
+            label7.Text = ((Task)taskTable[taskId]).taskName;
+            label3.Text = ((Task)taskTable[taskId]).accountId.ToString();
             Hashtable coworkerTable = readCoworkerDB();
-            label4.Text = ((Coworker)coworkerTable[((Task)taskList[taskIndex]).accountId]).GetName();
+            label4.Text = ((Coworker)coworkerTable[((Task)taskTable[taskId]).accountId]).GetName();
         }
 
         private Hashtable readCoworkerDB()
@@ -47,9 +47,9 @@ namespace ManagementSystem
             return coworkerTable;
         }
 
-        private ArrayList readTaskDB()
+        private Hashtable readTaskDB()
         {
-            ArrayList taskList = new ArrayList();
+            Hashtable taskTable = new Hashtable();
             List<string> textFile = new List<string>();
             if (File.Exists("Project" + projectId + "/taskDB.txt"))
             {
@@ -58,10 +58,10 @@ namespace ManagementSystem
                 {
                     string[] items = line.Split(',');
                     Task task = new Task(Convert.ToInt32(items[0]), Convert.ToInt32(items[1]), Convert.ToInt32(items[2]), items[3], items[4]);
-                    taskList.Add(task);
+                    taskTable.Add(task.taskId, task);
                 }
             }
-            return taskList;
+            return taskTable;
         }
 
         private void EditTaskForm_Load(object sender, EventArgs e)
@@ -105,19 +105,18 @@ namespace ManagementSystem
                         break;
                 }
             }
-            new ManagerDashBoardForm(this.accountId, this.projectId).Show();
+            new CoworkerDashBoardForm(this.accountId, this.projectId).Show();
             this.Hide();
         }
 
         private void ChangeStatus(string newStatus)
         {
-            int lineToModify = this.taskIndex;
+            int lineToModify = Convert.ToInt32(this.taskId.ToString().Remove(0,1)) - 1;
             List<string> lines = new List<string>(File.ReadAllLines("Project" + projectId + "/taskDB.txt"));
-            ArrayList taskList = readTaskDB();
-            Task taskToModify = (Task)taskList[this.taskIndex];
+            Hashtable taskTable = readTaskDB();
+            Task taskToModify = (Task)taskTable[this.taskId];
             lines[lineToModify] = taskToModify.taskId + "," + taskToModify.projectId + "," + taskToModify.accountId + "," + taskToModify.taskName + "," + newStatus;
             File.WriteAllLines("Project" + projectId + "/taskDB.txt", lines);
-            Console.WriteLine("Task modified");
         }
     }
 }
