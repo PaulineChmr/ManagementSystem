@@ -25,7 +25,7 @@ namespace ManagementSystem
             this.accountId = accountId;
             this.projectId = projectId;
             Project project = (Project)readProjectDB()[projectId];
-            label4.Text = ("Project : " + project.name);
+            label4.Text = (project.name);
             Hashtable coworkerTable = readCoworkerDB();
             label3.ForeColor = ((Coworker)coworkerTable[this.accountId]).color;
             List<Coworker> coworkerList = new List<Coworker>();
@@ -94,7 +94,7 @@ namespace ManagementSystem
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                e.Graphics.DrawString(((Task)listBox1.Items[e.Index]).taskName + "  " + ((Task)listBox1.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.DrawString(((Task)listBox1.Items[e.Index]).taskName, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             }
 
             e.DrawFocusRectangle();
@@ -132,7 +132,7 @@ namespace ManagementSystem
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                e.Graphics.DrawString(((Task)listBox3.Items[e.Index]).taskName + "  " + ((Task)listBox3.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.DrawString(((Task)listBox3.Items[e.Index]).taskName, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             }
 
             e.DrawFocusRectangle();
@@ -170,7 +170,7 @@ namespace ManagementSystem
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                e.Graphics.DrawString(((Task)listBox4.Items[e.Index]).taskName + "  " + ((Task)listBox4.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.DrawString(((Task)listBox4.Items[e.Index]).taskName, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             }
 
             e.DrawFocusRectangle();

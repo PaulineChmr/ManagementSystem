@@ -46,11 +46,11 @@ namespace ManagementSystem
             else
             {
                 Project project = (Project)readProjectDB()[projectId];
-                label4.Text = ("Project : " + project.name);
+                label4.Text = (project.name);
                 Button addCowokerButton= new Button();
                 addCowokerButton.Text = "Add Coworker";
                 addCowokerButton.Size = new System.Drawing.Size(150, 51);
-                addCowokerButton.Location = new Point(440, 250);
+                addCowokerButton.Location = new Point(440, 220);
                 addCowokerButton.Font = new Font("Microsoft Sans Serif", 13);
                 this.Controls.Add(addCowokerButton);
                 addCowokerButton.Click += (sender, e) =>
@@ -79,7 +79,7 @@ namespace ManagementSystem
                 Button addTaskButton = new Button();
                 addTaskButton.Text = "Add Task";
                 addTaskButton.Size = new System.Drawing.Size(150, 51);
-                addTaskButton.Location = new Point(10, 250);
+                addTaskButton.Location = new Point(440, 300);
                 addTaskButton.Font = new Font("Microsoft Sans Serif", 13);
                 this.Controls.Add(addTaskButton);
                 addTaskButton.Click += (sender, e) =>
@@ -133,7 +133,7 @@ namespace ManagementSystem
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                e.Graphics.DrawString(((Task)listBox1.Items[e.Index]).taskName + "  " + ((Task)listBox1.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.DrawString(((Task)listBox1.Items[e.Index]).taskName, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             }
 
             e.DrawFocusRectangle();
@@ -171,7 +171,7 @@ namespace ManagementSystem
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                e.Graphics.DrawString(((Task)listBox3.Items[e.Index]).taskName + "  " + ((Task)listBox3.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.DrawString(((Task)listBox3.Items[e.Index]).taskName, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             }
 
             e.DrawFocusRectangle();
@@ -209,7 +209,7 @@ namespace ManagementSystem
                     e.Graphics.FillRectangle(brush, e.Bounds);
                 }
 
-                e.Graphics.DrawString(((Task)listBox4.Items[e.Index]).taskName + "  " + ((Task)listBox4.Items[e.Index]).taskStatus, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.DrawString(((Task)listBox4.Items[e.Index]).taskName, this.Font, Brushes.Black, e.Bounds, StringFormat.GenericDefault);
             }
 
             e.DrawFocusRectangle();
@@ -335,6 +335,11 @@ namespace ManagementSystem
         {
             new LogInForm().Show();
             this.Hide();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
