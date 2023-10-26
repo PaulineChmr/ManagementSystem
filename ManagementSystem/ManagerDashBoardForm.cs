@@ -22,6 +22,7 @@ namespace ManagementSystem
             Hashtable accountTable = readAccountDB();
             Account account = (Account)accountTable[accountId];
             label3.Text = account.firstName +  " " + account.lastName;
+            label3.ForeColor = Color.FromName("Red");
             this.accountId = accountId;
             this.projectId = projectId;
             if (projectId == -1)

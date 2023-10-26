@@ -27,6 +27,7 @@ namespace ManagementSystem
             Project project = (Project)readProjectDB()[projectId];
             label4.Text = ("Project : " + project.name);
             Hashtable coworkerTable = readCoworkerDB();
+            label3.ForeColor = ((Coworker)coworkerTable[this.accountId]).color;
             List<Coworker> coworkerList = new List<Coworker>();
             foreach (DictionaryEntry s in coworkerTable)
             {
@@ -279,6 +280,11 @@ namespace ManagementSystem
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
