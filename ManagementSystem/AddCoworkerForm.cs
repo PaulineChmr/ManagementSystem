@@ -26,10 +26,10 @@ namespace ManagementSystem
             comboBox1.IntegralHeight = false;
             comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.DrawItem += comboBox1_DrawItem;
+            comboBox1.DrawItem += ComboBox1_DrawItem;
         }
 
-        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
+        private void ComboBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
             if (e.Index >= 0)
@@ -48,27 +48,17 @@ namespace ManagementSystem
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Account account = new Account(textPassword.Text, 1, textFirstName.Text, textLastName.Text, textEmail.Text, this.projectId);
-            Coworker coworker = new Coworker(account.accountId, account.status, account.firstName, account.lastName, (Color)comboBox1.SelectedValue, this.projectId);
-            new ManagerDashBoardForm(this.accountId, projectId).Show();
-            this.Hide();
-        }
-
         private void AddCoworkerForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-
+            Account account = new Account(textPassword.Text, 1, textFirstName.Text, textLastName.Text, textEmail.Text, this.projectId);
+            Coworker coworker = new Coworker(account.accountId, account.status, account.firstName, account.lastName, (Color)comboBox1.SelectedValue, this.projectId);
+            new ManagerDashBoardForm(this.accountId, projectId).Show();
+            this.Hide();
         }
     }
 }

@@ -60,7 +60,6 @@ namespace ManagementSystem
             this.label3.Size = new System.Drawing.Size(64, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -87,7 +86,7 @@ namespace ManagementSystem
             this.button1.TabIndex = 15;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // listBox2
             // 
@@ -133,7 +132,6 @@ namespace ManagementSystem
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 21;
             this.label1.Text = "To do";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label5
             // 
@@ -173,7 +171,7 @@ namespace ManagementSystem
             this.Name = "ManagerDashBoardForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.DashBoardForm_Load);
-            this.Click += new System.EventHandler(this.button1_Click);
+            this.Click += new System.EventHandler(this.Button1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

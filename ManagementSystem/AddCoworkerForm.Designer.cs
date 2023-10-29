@@ -116,7 +116,7 @@ namespace ManagementSystem
             this.button2.TabIndex = 25;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label1
             // 
@@ -127,7 +127,6 @@ namespace ManagementSystem
             this.label1.Size = new System.Drawing.Size(255, 32);
             this.label1.TabIndex = 24;
             this.label1.Text = "NEW COWORKER";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -136,7 +135,6 @@ namespace ManagementSystem
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 26;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label6
             // 

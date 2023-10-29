@@ -21,20 +21,7 @@ namespace ManagementSystem
             this.userId = userId;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Project project = new Project(textName.Text, userId);
-            Hashtable accountTable = readAccountDB();
-            Account user = (Account)accountTable[userId];
-            user.AddProject(project.projectId);
-            Directory.CreateDirectory("Project" + project.projectId);
-            File.AppendAllText("Project" + project.projectId + "/workerDB.txt", user.accountId + "," + user.status + "," + user.firstName + "," + user.lastName + "," + Color.Red.Name + Environment.NewLine);
-            MessageBox.Show("Your project : " + textName.Text + " is now created !");
-            new ManagerDashBoardForm(userId, project.projectId).Show();
-            this.Hide();
-        }
-
-        private Hashtable readAccountDB()
+        private Hashtable ReadAccountDB()
         {
             Hashtable accountTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -54,6 +41,19 @@ namespace ManagementSystem
         private void NewProjectForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Project project = new Project(textName.Text, userId);
+            Hashtable accountTable = ReadAccountDB();
+            Account user = (Account)accountTable[userId];
+            user.AddProject(project.projectId);
+            Directory.CreateDirectory("Project" + project.projectId);
+            File.AppendAllText("Project" + project.projectId + "/workerDB.txt", user.accountId + "," + user.status + "," + user.firstName + "," + user.lastName + "," + Color.Red.Name + Environment.NewLine);
+            MessageBox.Show("Your project : " + textName.Text + " is now created !");
+            new ManagerDashBoardForm(userId, project.projectId).Show();
+            this.Hide();
         }
     }
 }

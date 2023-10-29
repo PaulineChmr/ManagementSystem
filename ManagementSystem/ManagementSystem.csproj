@@ -100,7 +100,6 @@
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Task.cs" />
-    <Compile Include="TaskStatus.cs" />
     <EmbeddedResource Include="AddCoworkerForm.resx">
       <DependentUpon>AddCoworkerForm.cs</DependentUpon>
     </EmbeddedResource>

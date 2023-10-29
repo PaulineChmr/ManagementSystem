@@ -30,11 +30,6 @@ namespace ManagementSystem
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private Hashtable readCoworkerDB()
         {
             Hashtable coworkerTable = new Hashtable();
@@ -57,12 +52,7 @@ namespace ManagementSystem
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             string selectedValue = comboBox1.SelectedItem.ToString();
             int firstSpaceIndex = selectedValue.IndexOf(' ');
@@ -71,11 +61,6 @@ namespace ManagementSystem
             MessageBox.Show("Task : " + task.taskName + " added !");
             new ManagerDashBoardForm(this.accountId, this.projectId).Show();
             this.Hide();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

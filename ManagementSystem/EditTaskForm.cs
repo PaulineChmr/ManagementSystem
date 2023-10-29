@@ -23,14 +23,14 @@ namespace ManagementSystem
             this.accountId = accountId;
             this.projectId = projectId;
             this.taskId = taskId;
-            Hashtable taskTable = readTaskDB();
+            Hashtable taskTable = ReadTaskDB();
             label7.Text = ((Task)taskTable[taskId]).taskName;
             label3.Text = ((Task)taskTable[taskId]).accountId.ToString();
-            Hashtable coworkerTable = readCoworkerDB();
+            Hashtable coworkerTable = ReadCoworkerDB();
             label4.Text = ((Coworker)coworkerTable[((Task)taskTable[taskId]).accountId]).GetName();
         }
 
-        private Hashtable readCoworkerDB()
+        private Hashtable ReadCoworkerDB()
         {
             Hashtable coworkerTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -47,7 +47,7 @@ namespace ManagementSystem
             return coworkerTable;
         }
 
-        private Hashtable readTaskDB()
+        private Hashtable ReadTaskDB()
         {
             Hashtable taskTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -69,22 +69,8 @@ namespace ManagementSystem
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null) {
 
@@ -113,7 +99,7 @@ namespace ManagementSystem
         {
             int lineToModify = Convert.ToInt32(this.taskId.ToString().Remove(0,1)) - 1;
             List<string> lines = new List<string>(File.ReadAllLines("Project" + projectId + "/taskDB.txt"));
-            Hashtable taskTable = readTaskDB();
+            Hashtable taskTable = ReadTaskDB();
             Task taskToModify = (Task)taskTable[this.taskId];
             lines[lineToModify] = taskToModify.taskId + "," + taskToModify.projectId + "," + taskToModify.accountId + "," + taskToModify.taskName + "," + newStatus;
             File.WriteAllLines("Project" + projectId + "/taskDB.txt", lines);

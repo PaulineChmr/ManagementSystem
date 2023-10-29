@@ -19,7 +19,7 @@ namespace ManagementSystem
             InitializeComponent();
         }
 
-        private Hashtable readAccountDB()
+        private Hashtable ReadAccountDB()
         {
             Hashtable accountTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -36,16 +36,17 @@ namespace ManagementSystem
             return accountTable;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            Hashtable accountTable = readAccountDB();
-            try 
+            Hashtable accountTable = ReadAccountDB();
+            try
             {
                 if (accountTable.Contains(Convert.ToInt32(textId.Text)) && ((Account)accountTable[Convert.ToInt32(textId.Text)]).password == textPassword.Text)
                 {
                     Account account = (Account)accountTable[Convert.ToInt32(textId.Text)];
                     int projectId = account.projectId;
-                    switch (account.status){
+                    switch (account.status)
+                    {
                         case 0:
                             new ManagerDashBoardForm(Convert.ToInt32(textId.Text), projectId).Show();
                             this.Hide();
@@ -74,7 +75,7 @@ namespace ManagementSystem
                 textPassword.Clear();
                 textId.Focus();
             }
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace ManagementSystem
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             new SignUpForm().Show();
             this.Hide();

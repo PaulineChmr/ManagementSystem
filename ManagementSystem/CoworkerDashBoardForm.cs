@@ -19,14 +19,14 @@ namespace ManagementSystem
         public CoworkerDashBoardForm(int accountId, int projectId)
         {
             InitializeComponent();
-            Hashtable accountTable = readAccountDB();
+            Hashtable accountTable = ReadAccountDB();
             Account account = (Account)accountTable[accountId];
             label3.Text = account.firstName + " " + account.lastName;
             this.accountId = accountId;
             this.projectId = projectId;
-            Project project = (Project)readProjectDB()[projectId];
+            Project project = (Project)ReadProjectDB()[projectId];
             label4.Text = (project.name);
-            Hashtable coworkerTable = readCoworkerDB();
+            Hashtable coworkerTable = ReadCoworkerDB();
             label3.ForeColor = ((Coworker)coworkerTable[this.accountId]).color;
             List<Coworker> coworkerList = new List<Coworker>();
             foreach (DictionaryEntry s in coworkerTable)
@@ -40,7 +40,7 @@ namespace ManagementSystem
             listBox2.DataSource = coworkerList;
             listBox2.DrawMode = DrawMode.OwnerDrawFixed;
             listBox2.DrawItem += new DrawItemEventHandler(ListBox2_DrawItem);
-            List<Task> taskList = readTaskDB();
+            List<Task> taskList = ReadTaskDB();
             progressBar1.Minimum = 0;
             progressBar1.Maximum = taskList.Count;
             progressBar1.Value = (from Task task in taskList
@@ -83,7 +83,7 @@ namespace ManagementSystem
 
         private void ListBox1_DrawItem(object sender, DrawItemEventArgs e)
         {
-            Hashtable coworkerTable = readCoworkerDB();
+            Hashtable coworkerTable = ReadCoworkerDB();
             e.DrawBackground();
 
             if (e.Index >= 0)
@@ -103,7 +103,7 @@ namespace ManagementSystem
         private void ListBox1_Click(object sender, EventArgs e)
         {
             ListBox listBox = (ListBox)sender;
-            List<Task> toDoTaskList = readTaskDB().Where(x => x.taskStatus == "to do").ToList();
+            List<Task> toDoTaskList = ReadTaskDB().Where(x => x.taskStatus == "to do").ToList();
             Task selectedTask = ((Task)toDoTaskList[listBox.SelectedIndex]);
             if(listBox.SelectedIndex != -1)
             {
@@ -121,7 +121,7 @@ namespace ManagementSystem
 
         private void ListBox3_DrawItem(object sender, DrawItemEventArgs e)
         {
-            Hashtable coworkerTable = readCoworkerDB();
+            Hashtable coworkerTable = ReadCoworkerDB();
             e.DrawBackground();
 
             if (e.Index >= 0)
@@ -141,7 +141,7 @@ namespace ManagementSystem
         private void ListBox3_Click(object sender, EventArgs e)
         {
             ListBox listBox = (ListBox)sender;
-            List<Task> toDoTaskList = readTaskDB().Where(x => x.taskStatus == "in progress").ToList();
+            List<Task> toDoTaskList = ReadTaskDB().Where(x => x.taskStatus == "in progress").ToList();
             Task selectedTask = ((Task)toDoTaskList[listBox.SelectedIndex]);
             if (listBox.SelectedIndex != -1)
             {
@@ -159,7 +159,7 @@ namespace ManagementSystem
 
         private void ListBox4_DrawItem(object sender, DrawItemEventArgs e)
         {
-            Hashtable coworkerTable = readCoworkerDB();
+            Hashtable coworkerTable = ReadCoworkerDB();
             e.DrawBackground();
 
             if (e.Index >= 0)
@@ -179,7 +179,7 @@ namespace ManagementSystem
         private void ListBox4_Click(object sender, EventArgs e)
         {
             ListBox listBox = (ListBox)sender;
-            List<Task> toDoTaskList = readTaskDB().Where(x => x.taskStatus == "done").ToList();
+            List<Task> toDoTaskList = ReadTaskDB().Where(x => x.taskStatus == "done").ToList();
             Task selectedTask = ((Task)toDoTaskList[listBox.SelectedIndex]);
             if (listBox.SelectedIndex != -1)
             {
@@ -195,7 +195,7 @@ namespace ManagementSystem
             }
         }
 
-        private Hashtable readAccountDB()
+        private Hashtable ReadAccountDB()
         {
             Hashtable accountTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -212,7 +212,7 @@ namespace ManagementSystem
             return accountTable;
         }
 
-        private Hashtable readProjectDB()
+        private Hashtable ReadProjectDB()
         {
             Hashtable projectTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -229,7 +229,7 @@ namespace ManagementSystem
             return projectTable;
         }
 
-        private Hashtable readCoworkerDB()
+        private Hashtable ReadCoworkerDB()
         {
             Hashtable coworkerTable = new Hashtable();
             List<string> textFile = new List<string>();
@@ -246,7 +246,7 @@ namespace ManagementSystem
             return coworkerTable;
         }
 
-        private List<Task> readTaskDB()
+        private List<Task> ReadTaskDB()
         {
             List<Task> taskList = new List<Task>();
             List<string> textFile = new List<string>();
@@ -268,25 +268,10 @@ namespace ManagementSystem
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             new LogInForm().Show();
             this.Hide();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

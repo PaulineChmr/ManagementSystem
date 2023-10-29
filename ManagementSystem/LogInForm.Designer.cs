@@ -77,9 +77,9 @@ namespace ManagementSystem
             // 
             this.textPassword.Location = new System.Drawing.Point(281, 247);
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(255, 22);
             this.textPassword.TabIndex = 4;
-            this.textPassword.PasswordChar = '*';
             // 
             // button1
             // 
@@ -90,7 +90,7 @@ namespace ManagementSystem
             this.button1.TabIndex = 6;
             this.button1.Text = "Log In";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -101,7 +101,7 @@ namespace ManagementSystem
             this.button2.TabIndex = 7;
             this.button2.Text = "Sign Up";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // LogInForm
             // 

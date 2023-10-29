@@ -48,7 +48,6 @@ namespace ManagementSystem
             this.label1.Size = new System.Drawing.Size(159, 32);
             this.label1.TabIndex = 42;
             this.label1.Text = "EDIT TASK";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -85,7 +84,6 @@ namespace ManagementSystem
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 44;
             this.label6.Text = "Status";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -107,7 +105,6 @@ namespace ManagementSystem
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(207, 24);
             this.comboBox1.TabIndex = 47;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -118,7 +115,7 @@ namespace ManagementSystem
             this.button2.TabIndex = 48;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // EditTaskForm
             // 
