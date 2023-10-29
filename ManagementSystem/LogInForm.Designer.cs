@@ -67,7 +67,7 @@ namespace ManagementSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 250);
+            this.label3.Location = new System.Drawing.Point(200, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 5;
@@ -79,6 +79,7 @@ namespace ManagementSystem
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(255, 22);
             this.textPassword.TabIndex = 4;
+            this.textPassword.PasswordChar = '*';
             // 
             // button1
             // 

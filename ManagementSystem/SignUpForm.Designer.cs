@@ -39,14 +39,17 @@ namespace ManagementSystem
             this.textPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textEmail = new System.Windows.Forms.TextBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            
+            
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(203, 216);
+            this.label3.Location = new System.Drawing.Point(190, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Last Name";
             // 
@@ -60,9 +63,9 @@ namespace ManagementSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 175);
+            this.label2.Location = new System.Drawing.Point(190, 175);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "First Name";
             // 
@@ -98,9 +101,9 @@ namespace ManagementSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(210, 299);
+            this.label4.Location = new System.Drawing.Point(192, 299);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(65, 17);
             this.label4.TabIndex = 15;
             this.label4.Text = "Password";
             // 
@@ -114,9 +117,9 @@ namespace ManagementSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(237, 258);
+            this.label5.Location = new System.Drawing.Point(210, 258);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 17);
+            this.label5.Size = new System.Drawing.Size(65, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "Email";
             // 
@@ -126,6 +129,17 @@ namespace ManagementSystem
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(255, 22);
             this.textEmail.TabIndex = 12;
+            //
+            // buttonBack
+            //
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Location = new System.Drawing.Point(232, 330);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(113, 51);
+            this.buttonBack.TabIndex = 11;
+            this.buttonBack.Text = "Login";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // SignUpForm
             // 
@@ -142,6 +156,7 @@ namespace ManagementSystem
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textFirstName);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonBack);
             this.Name = "SignUpForm";
             this.Text = "SignInForm";
             this.Load += new System.EventHandler(this.SignInForm_Load);
@@ -162,5 +177,6 @@ namespace ManagementSystem
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

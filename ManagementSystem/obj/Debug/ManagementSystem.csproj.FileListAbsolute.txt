@@ -31,3 +31,20 @@ E:\COURS\UTS\Study Abroad\NET\Assignement2\ManagementSystem\ManagementSystem\obj
 E:\COURS\UTS\Study Abroad\NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.pdb
 E:\COURS\UTS\Study Abroad\NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.CoworkerDashBoardForm.resources
 E:\COURS\UTS\Study Abroad\NET\Assignement2\ManagementSystem\ManagementSystem\obj\Debug\ManagementSystem.ManagerDashBoardForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.exe
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.pdb
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\bin\Debug\ManagementSystem.exe.config
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\bin\Debug\ManagementSystem.exe
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\bin\Debug\ManagementSystem.pdb
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.csproj.AssemblyReference.cache
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.AddCoworkerForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.AddTaskForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.CoworkerDashBoardForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.ManagerDashBoardForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.EditTaskForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.LogInForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.NewProjectForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.Properties.Resources.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.SignUpForm.resources
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.csproj.GenerateResource.cache
+C:\Users\Ning\Downloads\ManagementSystem-main\ManagementSystem\obj\Debug\ManagementSystem.csproj.CoreCompileInputs.cache
